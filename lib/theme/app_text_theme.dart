@@ -16,7 +16,7 @@ class AppTextTheme {
       letterSpacing: 1.0,
       fontSize: fontSize,
       color: color,
-      fontFamily: fontFamily ?? GoogleFonts.spaceMono().fontFamily,
+      fontFamily: fontFamily ?? GoogleFonts.montserrat().fontFamily,
       fontFamilyFallback: [GoogleFonts.italiana().fontFamily ?? ''],
     );
   }

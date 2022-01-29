@@ -14,28 +14,37 @@ class TopPage extends StatelessWidget {
         return Scaffold(
             body: SafeArea(
                 child: IndexedStack(
-                  index: controller.tabIndex,
-                  children: const [
-                    ClipListPage(),
-                    ClipListPage(),
-                  ],
-                )
-            ),
+              index: controller.tabIndex,
+              children: const [
+                ClipListPage(),
+                ClipListPage(),
+              ],
+            )),
             bottomNavigationBar: BottomNavigationBar(
               onTap: controller.changeTabIndex,
               currentIndex: controller.tabIndex,
               items: const [
                 BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.video_camera),
+                  icon: Icon(
+                    CupertinoIcons.video_camera,
+                  ),
                   label: 'Clips',
+                  activeIcon: Icon(
+                    CupertinoIcons.video_camera_solid,
+                  ),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.music_note),
+                  icon: Icon(
+                    CupertinoIcons.smallcircle_circle,
+                  ),
                   label: 'Jackets',
+                  activeIcon: Icon(
+                    CupertinoIcons.smallcircle_fill_circle,
+                  ),
                 ),
               ],
-            )// Your bottom navigation bar widget here,
-        );
+            ) // Your bottom navigation bar widget here,
+            );
       },
     );
   }

@@ -26,7 +26,7 @@ class AppColors {
     onSurface: lightFillColor,
     brightness: Brightness.light,
     primaryVariant: lightFillColor,
-    secondaryVariant: lightFillColor,
+    secondaryVariant: accent,
   );
 
   static const ColorScheme darkColorScheme = ColorScheme(

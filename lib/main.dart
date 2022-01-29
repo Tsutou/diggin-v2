@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'diggin',
-      initialRoute: Routes.homeNavigation,
+      initialRoute: Routes.topNavigation,
       getPages: AppPages.routes,
       theme: AppTheme.lightThemeData,
       darkTheme: AppTheme.darkThemeData,

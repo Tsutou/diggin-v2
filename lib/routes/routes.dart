@@ -1,4 +1,4 @@
 
 class Routes {
-  static const homeNavigation = '/';
+  static const topNavigation = '/';
 }

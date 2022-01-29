@@ -9,14 +9,32 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.6.1
+
+  # Resoources
   cupertino_icons: ^1.0.2
   google_fonts: ^2.2.0
+
+  # getx
+  get: ^4.6.1
+
+  # For Model
+  json_serializable: ^5.0.2
+  freezed_annotation: ^0.15.0
+
+  # For Networking
+  dio: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # For Model
+  freezed: ^0.15.0
+
+  # For Networking
+  retrofit_generator: ^2.0.0+1
+
+  # lint
   flutter_lints: ^1.0.0
 
 flutter:

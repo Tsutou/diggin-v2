@@ -1,4 +1,5 @@
 import 'package:diggin_v2/theme/app_theme.dart';
+import 'package:diggin_v2/widgets/guide_text.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,16 +23,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -51,18 +42,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: GuideText.logo(context, widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            GuideText.title(
+              context, 'You have pushed the button this many times:',
             ),
-            Text(
+            GuideText.subTitle(
+              context,
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),

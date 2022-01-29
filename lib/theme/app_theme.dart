@@ -21,7 +21,6 @@ class AppTheme {
         backgroundColor: colorScheme.background,
         iconTheme: IconThemeData(color: colorScheme.primary),
       ),
-      fontFamily: GoogleFonts.sacramento().fontFamily,
       iconTheme: IconThemeData(color: colorScheme.onPrimary),
       canvasColor: colorScheme.background,
       scaffoldBackgroundColor: colorScheme.background,

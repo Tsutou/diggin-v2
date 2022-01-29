@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextTheme {
@@ -14,9 +15,14 @@ class AppTextTheme {
       letterSpacing: 1.0,
       fontSize: fontSize,
       color: color,
-      fontFamilyFallback: const ['NotoSans'],
+      fontFamilyFallback: [GoogleFonts.italiana().fontFamily ?? ''],
     );
   }
+
+  late final TextStyle logo = _baseTextStyle(
+    fontSize: 24,
+    color: AppColors(context).primaryText,
+  ).bold();
 
   late final TextStyle title = _baseTextStyle(
     fontSize: 24,
@@ -50,15 +56,14 @@ class AppTextTheme {
 }
 
 extension TextStyleExt on TextStyle {
-
   static const _regular = FontWeight.w400;
   static const _bold = FontWeight.w700;
 
   TextStyle normal() => copyWith(
-    fontWeight: _regular,
-  );
+        fontWeight: _regular,
+      );
 
   TextStyle bold() => copyWith(
-    fontWeight: _bold,
-  );
+        fontWeight: _bold,
+      );
 }

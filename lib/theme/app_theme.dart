@@ -1,5 +1,6 @@
 import 'package:diggin_v2/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
 
@@ -16,12 +17,11 @@ class AppTheme {
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
       colorScheme: colorScheme,
-      primaryColor: const Color(0xFF030303),
       appBarTheme: AppBarTheme(
         backgroundColor: colorScheme.background,
-        elevation: 0,
         iconTheme: IconThemeData(color: colorScheme.primary),
       ),
+      fontFamily: GoogleFonts.sacramento().fontFamily,
       iconTheme: IconThemeData(color: colorScheme.onPrimary),
       canvasColor: colorScheme.background,
       scaffoldBackgroundColor: colorScheme.background,

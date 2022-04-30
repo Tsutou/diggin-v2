@@ -23,6 +23,8 @@ dependencies:
 
   # For Networking
   dio: ^4.0.1
+  retrofit: '>=3.0.0 <4.0.0'
+  logger: any
 
 dev_dependencies:
   flutter_test:
@@ -32,8 +34,7 @@ dev_dependencies:
   freezed: ^0.15.0
 
   # For Networking
-  retrofit_generator: ^2.0.0+1
-
+  retrofit_generator: '>=3.0.0 <4.0.0'
   build_runner: ^2.0.4
 
   # lint

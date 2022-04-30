@@ -1,24 +1,19 @@
 import 'package:diggin_v2/data/api_constants.dart';
+import 'package:diggin_v2/data/model/api_request_type.dart';
 import 'package:diggin_v2/data/model/itunes_data.dart';
-import 'package:get/get.dart';
+import 'package:diggin_v2/data/model/result.dart';
+import 'package:diggin_v2/data/remote/acstract_data_source.dart';
 
-class ItunesRemoteDataSource extends GetConnect {
+class ItunesRemoteDataSource extends ApiClient {
 
-  ItunesRemoteDataSource() {
-    httpClient.baseUrl = RemoteDataConstants.itunesApiBaseUrl;
-  }
+  @override
+  String baseUrl = RemoteDataConstants.itunesApiBaseUrl;
 
-  Future<Response<ItunesData>> fetchVideos(String artist) {
-    httpClient.defaultDecoder = (json) => ItunesData.fromJson(json);
-
-    const path = "search";
-
-    final Map<String, dynamic> query = {
-      "term": artist,
-      "entity": 'musicVideo',
-      "limit" : 20
-    };
-
-    return get<ItunesData>(path, query: query);
+  Future<Result<ItunesData>> fetchVideos(String artist) {
+    return sendRequest(
+      type: ApiRequestType.get,
+      path: "search",
+      decoder: (json) => ItunesData.fromJson(json),
+    );
   }
 }

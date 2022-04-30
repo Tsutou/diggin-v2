@@ -1,19 +1,17 @@
+import 'package:diggin_v2/features/clip/clip_list_view_model.dart';
 import 'package:diggin_v2/widgets/guide_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ClipListPage extends StatelessWidget {
   const ClipListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = Get.find<ClipListViewModel>();
+
     return Scaffold(
-      appBar: AppBar(
-        title: GuideText.logo(
-          context,
-          'diggin',
-        ),
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

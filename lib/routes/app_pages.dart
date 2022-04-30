@@ -1,3 +1,4 @@
+import 'package:diggin_v2/features/clip/clip_list_binding.dart';
 import 'package:diggin_v2/features/clip/clip_list_page.dart';
 import 'package:diggin_v2/features/top/top_page.dart';
 import 'package:diggin_v2/features/top/top_page_binding.dart';
@@ -9,7 +10,11 @@ class AppPages {
     GetPage(
       name: Routes.topNavigation,
       page: () => const TopPage(),
-      binding: TopPageBinding(),
+      bindings: [
+        TopPageBinding(),
+        ClipListBinding(),
+      ],
+      children: [GetPage(name: Routes.clips, page: () => const ClipListPage())],
     ),
   ];
 }

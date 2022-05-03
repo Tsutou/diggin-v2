@@ -5,10 +5,12 @@ part 'itunes_data.freezed.dart';
 part 'itunes_data.g.dart';
 
 @freezed
-abstract class ItunesData with _$ItunesData {
+class ItunesData with _$ItunesData {
 
   factory ItunesData({
+    required int artistId,
     required String artistName,
+    required String collectionName,
     required String trackCensoredName,
     String? previewUrl,
     String? artworkUrl30,

@@ -22,7 +22,9 @@ class _$ItunesDataTearOff {
   const _$ItunesDataTearOff();
 
   _ItunesData call(
-      {required String artistName,
+      {required int artistId,
+      required String artistName,
+      required String collectionName,
       required String trackCensoredName,
       String? previewUrl,
       String? artworkUrl30,
@@ -30,7 +32,9 @@ class _$ItunesDataTearOff {
       String? artworkUrl100,
       String? primaryGenreName}) {
     return _ItunesData(
+      artistId: artistId,
       artistName: artistName,
+      collectionName: collectionName,
       trackCensoredName: trackCensoredName,
       previewUrl: previewUrl,
       artworkUrl30: artworkUrl30,
@@ -50,7 +54,9 @@ const $ItunesData = _$ItunesDataTearOff();
 
 /// @nodoc
 mixin _$ItunesData {
+  int get artistId => throw _privateConstructorUsedError;
   String get artistName => throw _privateConstructorUsedError;
+  String get collectionName => throw _privateConstructorUsedError;
   String get trackCensoredName => throw _privateConstructorUsedError;
   String? get previewUrl => throw _privateConstructorUsedError;
   String? get artworkUrl30 => throw _privateConstructorUsedError;
@@ -70,7 +76,9 @@ abstract class $ItunesDataCopyWith<$Res> {
           ItunesData value, $Res Function(ItunesData) then) =
       _$ItunesDataCopyWithImpl<$Res>;
   $Res call(
-      {String artistName,
+      {int artistId,
+      String artistName,
+      String collectionName,
       String trackCensoredName,
       String? previewUrl,
       String? artworkUrl30,
@@ -89,7 +97,9 @@ class _$ItunesDataCopyWithImpl<$Res> implements $ItunesDataCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? artistId = freezed,
     Object? artistName = freezed,
+    Object? collectionName = freezed,
     Object? trackCensoredName = freezed,
     Object? previewUrl = freezed,
     Object? artworkUrl30 = freezed,
@@ -98,9 +108,17 @@ class _$ItunesDataCopyWithImpl<$Res> implements $ItunesDataCopyWith<$Res> {
     Object? primaryGenreName = freezed,
   }) {
     return _then(_value.copyWith(
+      artistId: artistId == freezed
+          ? _value.artistId
+          : artistId // ignore: cast_nullable_to_non_nullable
+              as int,
       artistName: artistName == freezed
           ? _value.artistName
           : artistName // ignore: cast_nullable_to_non_nullable
+              as String,
+      collectionName: collectionName == freezed
+          ? _value.collectionName
+          : collectionName // ignore: cast_nullable_to_non_nullable
               as String,
       trackCensoredName: trackCensoredName == freezed
           ? _value.trackCensoredName
@@ -137,7 +155,9 @@ abstract class _$ItunesDataCopyWith<$Res> implements $ItunesDataCopyWith<$Res> {
       __$ItunesDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String artistName,
+      {int artistId,
+      String artistName,
+      String collectionName,
       String trackCensoredName,
       String? previewUrl,
       String? artworkUrl30,
@@ -158,7 +178,9 @@ class __$ItunesDataCopyWithImpl<$Res> extends _$ItunesDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? artistId = freezed,
     Object? artistName = freezed,
+    Object? collectionName = freezed,
     Object? trackCensoredName = freezed,
     Object? previewUrl = freezed,
     Object? artworkUrl30 = freezed,
@@ -167,9 +189,17 @@ class __$ItunesDataCopyWithImpl<$Res> extends _$ItunesDataCopyWithImpl<$Res>
     Object? primaryGenreName = freezed,
   }) {
     return _then(_ItunesData(
+      artistId: artistId == freezed
+          ? _value.artistId
+          : artistId // ignore: cast_nullable_to_non_nullable
+              as int,
       artistName: artistName == freezed
           ? _value.artistName
           : artistName // ignore: cast_nullable_to_non_nullable
+              as String,
+      collectionName: collectionName == freezed
+          ? _value.collectionName
+          : collectionName // ignore: cast_nullable_to_non_nullable
               as String,
       trackCensoredName: trackCensoredName == freezed
           ? _value.trackCensoredName
@@ -203,7 +233,9 @@ class __$ItunesDataCopyWithImpl<$Res> extends _$ItunesDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ItunesData implements _ItunesData {
   _$_ItunesData(
-      {required this.artistName,
+      {required this.artistId,
+      required this.artistName,
+      required this.collectionName,
       required this.trackCensoredName,
       this.previewUrl,
       this.artworkUrl30,
@@ -215,7 +247,11 @@ class _$_ItunesData implements _ItunesData {
       _$$_ItunesDataFromJson(json);
 
   @override
+  final int artistId;
+  @override
   final String artistName;
+  @override
+  final String collectionName;
   @override
   final String trackCensoredName;
   @override
@@ -231,7 +267,7 @@ class _$_ItunesData implements _ItunesData {
 
   @override
   String toString() {
-    return 'ItunesData(artistName: $artistName, trackCensoredName: $trackCensoredName, previewUrl: $previewUrl, artworkUrl30: $artworkUrl30, artworkUrl60: $artworkUrl60, artworkUrl100: $artworkUrl100, primaryGenreName: $primaryGenreName)';
+    return 'ItunesData(artistId: $artistId, artistName: $artistName, collectionName: $collectionName, trackCensoredName: $trackCensoredName, previewUrl: $previewUrl, artworkUrl30: $artworkUrl30, artworkUrl60: $artworkUrl60, artworkUrl100: $artworkUrl100, primaryGenreName: $primaryGenreName)';
   }
 
   @override
@@ -239,8 +275,12 @@ class _$_ItunesData implements _ItunesData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ItunesData &&
+            (identical(other.artistId, artistId) ||
+                other.artistId == artistId) &&
             (identical(other.artistName, artistName) ||
                 other.artistName == artistName) &&
+            (identical(other.collectionName, collectionName) ||
+                other.collectionName == collectionName) &&
             (identical(other.trackCensoredName, trackCensoredName) ||
                 other.trackCensoredName == trackCensoredName) &&
             (identical(other.previewUrl, previewUrl) ||
@@ -256,8 +296,17 @@ class _$_ItunesData implements _ItunesData {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, artistName, trackCensoredName,
-      previewUrl, artworkUrl30, artworkUrl60, artworkUrl100, primaryGenreName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      artistId,
+      artistName,
+      collectionName,
+      trackCensoredName,
+      previewUrl,
+      artworkUrl30,
+      artworkUrl60,
+      artworkUrl100,
+      primaryGenreName);
 
   @JsonKey(ignore: true)
   @override
@@ -272,7 +321,9 @@ class _$_ItunesData implements _ItunesData {
 
 abstract class _ItunesData implements ItunesData {
   factory _ItunesData(
-      {required String artistName,
+      {required int artistId,
+      required String artistName,
+      required String collectionName,
       required String trackCensoredName,
       String? previewUrl,
       String? artworkUrl30,
@@ -284,7 +335,11 @@ abstract class _ItunesData implements ItunesData {
       _$_ItunesData.fromJson;
 
   @override
+  int get artistId;
+  @override
   String get artistName;
+  @override
+  String get collectionName;
   @override
   String get trackCensoredName;
   @override

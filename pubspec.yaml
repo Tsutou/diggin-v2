@@ -25,6 +25,7 @@ dependencies:
   dio: ^4.0.1
   retrofit: '>=3.0.0 <4.0.0'
   logger: any
+  alice: ^0.2.5
 
 dev_dependencies:
   flutter_test:
